@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">WeatherApp</string>
+    <string name="city_name">Belgorod</string>
+    <string name="err_connection">Отсутствует подключение к интернету</string>
+</resources>
