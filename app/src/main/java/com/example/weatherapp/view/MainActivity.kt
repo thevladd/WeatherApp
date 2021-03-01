@@ -13,6 +13,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.weatherapp.R
+import com.example.weatherapp.model.Days
 import com.example.weatherapp.model.WeatherData
 import com.example.weatherapp.model.WeatherList
 import com.example.weatherapp.service.ConvertService
@@ -26,6 +27,7 @@ class MainActivity : AppCompatActivity() {
     private var adapter1: ForecastAdapter? = null
     private var adapter2: HoursAdapter? = null
     var weatherList: List<List<WeatherData>> = arrayListOf()
+    //lateinit var days: Days
     lateinit var mainActivityViewModel: MainActivityViewModel
     lateinit var binding : com.example.weatherapp.databinding.ActivityMainBinding
 
@@ -53,6 +55,7 @@ class MainActivity : AppCompatActivity() {
         if(!(ConvertService.convertedTime(listWeather.list[0].dtTxt)).equals("00:00:00"))
             i=ConvertService.convertedTime(listWeather.list[0].dtTxt).split(":")[0].toInt()/3
         weatherList= listOf(listWeather.list.take(8), *(listWeather.list.drop(8 - i).chunked(8)).toTypedArray())
+        //days.day=listOf(listWeather.list.take(8), *(listWeather.list.drop(8 - i).chunked(8)).toTypedArray())
     }
 
     fun getData(){

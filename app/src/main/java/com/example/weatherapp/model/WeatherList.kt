@@ -3,7 +3,9 @@ package com.example.weatherapp.model
 import com.google.gson.annotations.SerializedName
 import java.io.Serializable
 
-
+data class Days(
+    var day: List<List<WeatherData>> = arrayListOf()
+)
 
 data class WeatherList(
     @SerializedName("city")
@@ -43,6 +45,7 @@ data class Main(
     var tempMax: Double,
     @SerializedName("temp_min")
     var tempMin: Double
+
 ): Serializable
 
 data class City(
